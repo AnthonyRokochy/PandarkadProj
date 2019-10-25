@@ -1,0 +1,58 @@
+.Greetings
+    position: relative
+    background-color: black
+    height: 100%;
+    width: 100%;
+    overflow: hidden
+    z-index: 0
+    .BackgroundImg
+        img
+            position: absolute
+            top: -20px
+            width: 100%
+            height: 110%
+            overflow: hidden
+            left: 0
+            z-index: -1
+    .Opening
+        left: 800px
+        top: 110px
+        z-index: 100
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-items: center
+        position: absolute
+        width: 500px
+        .LogoImg
+            z-index: 101
+            padding-top: 15px
+            img
+                height: 160px
+                width: 130px
+        .BlurSpace
+            position: absolute
+            padding: 5px 20px
+            height: 100%
+            width: 100%
+            border: solid 2px white
+            border-radius: 15%
+        .IntroductionText
+            z-index: 101
+            width: 100%
+            text-align: center
+            color: white
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            .FrontText
+                padding-top: 10px 
+                font-size: 50px
+            .SubText
+                padding-top: 10px
+                padding-bottom: 15px
+                font-size: 20px
+                opacity: .6
+
+

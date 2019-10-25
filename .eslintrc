@@ -1,0 +1,25 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+        "react/jsx-filename-extension": 0,
+        "react/prefer-stateless-function": 0,
+        "react/jsx-indent": [2, 4],
+        "jsx-quotes": [2, "prefer-single"],
+        "no-console": 0,
+        "import/prefer-default-export": 0,
+        "arrow-body-style": 0
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "globals": {
+        "React": true,
+        "ReactDOM": true,
+        "_": true
+    },
+    "parser": "babel-eslint"
+}
