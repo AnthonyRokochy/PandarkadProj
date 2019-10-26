@@ -3,12 +3,12 @@ import Opening from './Opening';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import classnames from 'classnames';
-class Greetings extends Component {
+class Background extends Component {
   render() {
     return (
-        <div className='Greetings'>
+        <div className='Background'>
             <div className='BackgroundImg'>
-                <img src='https://i.imgur.com/5btqks9.jpg' alt='background img' />
+                <img src='https://i.imgur.com/PV31Cmg.png' alt='background img' />
             </div>
             <Opening />
         </div>
@@ -16,4 +16,4 @@ class Greetings extends Component {
   }
 }
 
-export default Greetings;
+export default Background;

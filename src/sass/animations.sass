@@ -1,0 +1,60 @@
+@keyframes zoomer
+  0%                                        
+    height: 160%
+    width: 150%
+  50%
+    height: 160%
+    width: 150%
+    top: -300px
+    left: -100px
+  100%
+    height: 130%
+    width: 125%
+    right: -200px
+    bottom: -400px
+=keyframes($zoomer)
+  @-webkit-keyframes #{$zoomer}
+    @content
+  @-moz-keyframes #{$zoomer}
+    @content
+  @-ms-keyframes #{$zoomer}
+    @content
+  @keyframes #{$zoomer}
+    @content
++keyframes(zoomer)
+  0%
+    height: 160%
+    width: 150%
+  50%
+    height: 160%
+    width: 150%
+    top: -400px
+    left: -200px
+  100%
+    height: 130%
+    width: 125%
+    right: -200px
+    bottom: -400px
+@keyframes demonstration
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+=keyframes($demonstration)
+  @-webkit-keyframes #{$demonstration}
+    @content
+  @-moz-keyframes #{$demonstration}
+    @content
+  @-ms-keyframes #{$demonstration}
+    @content
+  @keyframes #{$demonstration}
+    @content
++keyframes(demonstration)
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
