@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TextButton from '../TextButton';
+import TextButton from '../Helpers/TextButton';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import classnames from 'classnames';
