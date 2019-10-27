@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TextButtons from '../TextButtons';
+import TextButton from '../TextButton';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import classnames from 'classnames';
@@ -17,7 +17,7 @@ class Opening extends Component {
             <div className='IntroductionText'>
                 <div className='FrontText'>PANDARKAD</div>
                 <div className='SubText'> London is the capital of Great Britain. London is the capital of Great Britain.  London is the capital of Great Britain.  London is the capital.</div>
-                <TextButtons />
+                <TextButton />
             </div>
         </div>
     );

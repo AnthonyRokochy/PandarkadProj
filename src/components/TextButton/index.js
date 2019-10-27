@@ -2,6 +2,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -18,7 +19,7 @@ export default function OutlinedButtons() {
   return (
       <div>
           <Button variant='outlined' color='inherit' className={classes.button}>
-        Enter
+              <Link className='Linker' to='/genre'>Enter</Link>
           </Button>
       </div>
   );

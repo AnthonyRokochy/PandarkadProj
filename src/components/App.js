@@ -1,6 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Background from './Background';
+import Opening from './Opening';
+import Genre from './Genre';
 // import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
@@ -8,10 +11,13 @@ import Background from './Background';
 class App extends Component {
   render() {
     return (
-        <div className='App'>
-            <Background />
-            <div className='Test' />
-        </div>
+        <BrowserRouter>
+            <div className='App'>
+                <Background />
+                <Route exact path='/' component={Opening} />
+                <Route path='/genre' component={Genre} />
+            </div>
+        </BrowserRouter>
     );
   }
 }
