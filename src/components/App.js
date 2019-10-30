@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Background from './Background';
 import Opening from './Opening';
 import Genre from './Genre';
+import Gallery from './Gallery';
 // import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
@@ -16,6 +17,7 @@ class App extends Component {
                 <Background />
                 <Route exact path='/' component={Opening} />
                 <Route path='/genre' component={Genre} />
+                <Route path='/gallery' component={Gallery} />
             </div>
         </BrowserRouter>
     );

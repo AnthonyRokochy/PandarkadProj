@@ -58,3 +58,19 @@
     opacity: 1
   100%
     opacity: 0
+@keyframes pulsate
+  50%
+    color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
+=keyframes($pulsate)
+  @-webkit-keyframes #{$pulsate}
+    @content
+  @-moz-keyframes #{$pulsate}
+    @content
+  @-ms-keyframes #{$pulsate}
+    @content
+  @keyframes #{$pulsate}
+    @content
++keyframes(pulsate)
+  50%
+    color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
+  

@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
@@ -7,26 +8,22 @@ const images = [
   {
     url: 'https://i.imgur.com/RfZADlZ.jpg',
     title: '3D',
-    width: '300px',
-    text: 'HelloWorld',
+    width: '350px',
   },
   {
     url: 'https://i.imgur.com/3sN3gKp.jpg',
     title: 'Concept Art',
-    width: '300px',
-    text: 'HelloWorld',
+    width: '350px',
   },
   {
     url: 'https://i.imgur.com/szrLKL1.jpg',
     title: 'Scetch',
-    width: '300px',
-    text: 'HelloWorld',
+    width: '350px',
   },
   {
     url: 'https://i.imgur.com/s1Rl8TZ.jpg',
-    title: 'Another',
-    width: '300px',
-    text: 'HelloWorld',
+    title: 'Process',
+    width: '350px',
   },
 ];
 
@@ -39,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   image: {
     position: 'relative',
     height: 200,
-    margin: '10px',
+    margin: '12px',
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
@@ -76,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     bottom: 0,
     backgroundSize: 'cover',
+    borderRadius: '3%',
     backgroundPosition: 'center 40%',
   },
   imageBackdrop: {
@@ -100,20 +98,6 @@ const useStyles = makeStyles((theme) => ({
     bottom: -2,
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
-  },
-  TestBlock: {
-    position: 'relative',
-    marginTop: '200px',
-    color: 'white',
-    height: '200px',
-    width: '300px',
-    backgroundColor: 'black',
-    opacity: 0.5,
-  },
-  TestBlockText: {
-    zIndex: 100,
-    opacity: 1,
-    color: 'white',
   },
 }));
 
@@ -146,14 +130,9 @@ export default function ButtonBases() {
                         color='inherit'
                         className={classes.imageTitle}
                       >
-                          {image.title}
+                          <Link className='Linker' to='/gallery'>{image.title}</Link>
                           <span className={classes.imageMarked} />
                       </Typography>
-                  </span>
-                  <span className={classes.TestBlock}>
-                      <div className={classes.TestBlockText}>
-                          {image.text}
-                      </div>
                   </span>
               </ButtonBase>
           ))}
