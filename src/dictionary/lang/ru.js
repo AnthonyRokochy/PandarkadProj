@@ -6,5 +6,6 @@ export default {
   },
   Opening: {
     HelloText: 'Лондон является столицей Великой Британии',
+    Enter: 'Войти',
   },
 };

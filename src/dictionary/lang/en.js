@@ -6,5 +6,6 @@ export default {
   },
   Opening: {
     HelloText: 'London is the capital of the Great Britain',
+    Enter: 'Enter',
   },
 };

@@ -31,7 +31,7 @@ App.propTypes = {
 function select(store) {
   return {
     lang: store.viewReducer.userParams.lang,
-    dict: store.viewReducer.dict,
+    // dict: store.viewReducer.dict,
   };
 }
 

@@ -23,7 +23,7 @@ const initialState = Immutable({
   loading: true,
   mobileVersion: false,
   page: {},
-  dict: getDict(LANG_EN),
+  dict: {},
 });
 
 const viewReducer = createReducer(initialState, {
