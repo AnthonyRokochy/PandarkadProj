@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import TextButton from '../../Helpers/TextButton';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import classnames from 'classnames';
 class Opening extends Component {
   render() {
+    const { dict } = this.props;
     return (
         <div className='Opening'>
             <div className='LogoImg'>
@@ -17,7 +20,9 @@ class Opening extends Component {
             </div>
             <div className='IntroductionText'>
                 <div className='FrontText'>PANDARKAD</div>
-                <div className='SubText'> London is the capital of Great Britain. London is the capital of Great Britain.  London is the capital of Great Britain.  London is the capital.</div>
+                <div className='SubText'>
+                    { dict.translate('Opening.HelloText') }
+                </div>
                 <TextButton />
             </div>
         </div>
@@ -25,8 +30,18 @@ class Opening extends Component {
   }
 }
 
-function select(/* store */) {
-  return { };
+Opening.propTypes = {
+  // dispatch: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  dict: PropTypes.object.isRequired,
+};
+
+function select(store) {
+  return {
+    // lang: store.viewReducer.lang,
+    dict: store.viewReducer.dict,
+  };
 }
 
-export default connect(select)(Opening);
+
+export default withRouter(connect(select)(Opening));

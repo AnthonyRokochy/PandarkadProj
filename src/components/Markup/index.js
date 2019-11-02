@@ -5,12 +5,14 @@ import Background from '../Background';
 import Opening from './Opening';
 import Genre from './Genre';
 import Gallery from './Gallery';
+import Language from '../Language';
 
 class Markup extends Component {
   render() {
     return (
         <div className='Markup'>
             <Background />
+            <Language />
             <Switch>
                 <Route exact path='/' render={() => <Opening />} />
                 <Route exact path='/genre' render={() => <Genre />} />
