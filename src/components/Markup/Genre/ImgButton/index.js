@@ -9,21 +9,25 @@ const images = [
     url: 'https://i.imgur.com/RfZADlZ.jpg',
     title: '3D',
     width: '350px',
+    path: '/3D',
   },
   {
     url: 'https://i.imgur.com/3sN3gKp.jpg',
     title: 'Concept Art',
     width: '350px',
+    path: '/concept_art',
   },
   {
     url: 'https://i.imgur.com/szrLKL1.jpg',
     title: 'Scetch',
     width: '350px',
+    path: '/scetch',
   },
   {
     url: 'https://i.imgur.com/s1Rl8TZ.jpg',
     title: 'Process',
     width: '350px',
+    path: '/process',
   },
 ];
 
@@ -104,9 +108,10 @@ export default function ButtonBases() {
   const classes = useStyles();
 
   return (
-      <Link className='Linker' to='/gallery'>
-          <div className={classes.root}>
-              {images.map((image) => (
+      <div className={classes.root}>
+          {images.map((image) => (
+              // eslint-disable-next-line react/jsx-key
+              <Link className='Linker' to={image.path}>
                   <ButtonBase
                     focusRipple
                     key={image.title}
@@ -135,8 +140,8 @@ export default function ButtonBases() {
                           </Typography>
                       </span>
                   </ButtonBase>
-              ))}
-          </div>
-      </Link>
+              </Link>
+          ))}
+      </div>
   );
 }
