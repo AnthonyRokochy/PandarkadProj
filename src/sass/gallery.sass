@@ -18,7 +18,7 @@
         display: flex
         flex-direction: row
         height: 60%
-        width: 54%
+        max-width: 54%
         color: white
         font-size: 70px
         z-index: 100
@@ -76,18 +76,22 @@
                 align-items: center
                 border: solid 1px blue
                 margin: 6px
-                opacity: .6
                 overflow: hidden
                 &:hover
+                    cursor: pointer
                     height: 125px
                     width: 175px
-                    opacity: 1
                     margin: 0
                     box-shadow: 0 0 15px white
+                    border: none
+                &:hover img
+                    opacity: 1                       
                 img
                     height: auto
                     max-width: 100%;
                     object-fit: cover
+                    z-index: 2
+                    opacity: .6
 
 
 

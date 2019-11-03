@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import TextButton from '../../Helpers/TextButton';
+import TextButton from './TextButton';
 import { AppContext } from '../../../contexts/contexts';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';

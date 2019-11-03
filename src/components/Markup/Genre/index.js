@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ImgButton from '../../Helpers/ImgButton';
+import ImgButton from '../Gallery/ImgButton';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import classnames from 'classnames';

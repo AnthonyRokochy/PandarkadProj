@@ -1,5 +1,7 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import { connect } from 'react-redux';
 import ImagesItem from './ImagesItem';
 import Scroller from '../../Helpers/Scroller';
 
@@ -57,5 +59,17 @@ class Gallery extends Component {
   }
 }
 
+Gallery.propTypes = {
+  //
+};
 
-export default Gallery;
+// InfoPage.defaultProps = {
+//
+// };
+
+function select() {
+  return {
+  };
+}
+
+export default connect(select)(Gallery);
