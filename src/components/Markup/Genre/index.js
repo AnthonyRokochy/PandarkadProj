@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ImgButton from './ImgButton';
+import Language from '../../Language';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import classnames from 'classnames';
@@ -7,6 +8,7 @@ class Genre extends Component {
   render() {
     return (
         <div className='Genre'>
+            <Language />
             <ImgButton />
         </div>
     );

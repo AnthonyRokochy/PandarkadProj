@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import TextButton from './TextButton';
+import Language from '../../Language';
 import { AppContext } from '../../../contexts/contexts';
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
@@ -10,6 +11,7 @@ function Opening() {
   const { lang } = useContext(AppContext);
   return (
       <div className='Opening'>
+          <Language />
           <div className='LogoImg'>
               <img src='https://i.imgur.com/U54Rosh.png' alt='logotype' />
           </div>

@@ -2,17 +2,20 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const pcckageConfig = require('../package.json');
 
 module.exports = {
   entry: path.resolve(__dirname, '../src/index.js'),
   mode: 'development',
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, '../dist'),
+    publicPath: '/',
     hot: true,
     historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.tsx', '.ts'],
   },
   module: {
     rules: [
@@ -53,6 +56,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -67,6 +71,12 @@ module.exports = {
       React: 'react',
       ReactDOM: 'react-dom',
       dict: [path.resolve(__dirname, '../src/dictionary/dict.js'), 'default'],
+    }),
+    new webpack.DefinePlugin({
+      // 'process.env.NODE_ENV': JSON.stringify('PRODUCTION'),
+      'process.env.NODE_ENV': JSON.stringify('DEVELOPMENT'),
+      'process.env.VERSION': JSON.stringify(pcckageConfig.version),
+      //
     }),
   ],
 };
