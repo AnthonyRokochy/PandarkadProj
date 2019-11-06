@@ -1,0 +1,57 @@
+version: 2.1
+
+executors:
+    my-executor:
+        docker:
+        - image: circleci/node:10.15
+        working_directory: ~/repo
+
+jobs:
+    build_job:
+        executor: my-executor
+        steps:
+            - checkout
+                    # Download and cache dependencies
+            # - restore_cache:
+            #     keys:
+            #       - v1-dependencies-{{ checksum "package.json" }}
+            #       - v1-dependencies-
+            - run:
+                name: Install Dependencies
+                command: npm install
+            # - save_cache:
+            #     key: v1-npm-deps-{{ checksum "package-lock.json" }}
+            #     paths:
+            #       - ./node_modules
+            - run:
+                name: Build
+                command: npm run build
+            - persist_to_workspace:
+                # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is 
+                # taken to be the root directory of the workspace.
+                root: ~/repo
+                # Must be relative path from root
+                paths:
+                    - ./
+
+            # command: firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
+    firebase_deploy_job:
+        executor: my-executor
+        steps:
+            - attach_workspace:
+                # Must be absolute path or relative path from working_directory
+                at: ~/repo
+            - run:
+                name: Deploy Master to Firebase
+                command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_DEPLOY_TOKEN" --only hosting
+workflows:
+    version: 2
+    firebase_build:
+        jobs:
+            - build_job
+            - firebase_deploy_job:
+                requires:
+                    - build_job
+                filters:
+                    branches:
+                        only: master
