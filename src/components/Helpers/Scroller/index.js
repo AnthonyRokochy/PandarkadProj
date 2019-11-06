@@ -59,11 +59,7 @@ class Scroller extends Component {
                   onMouseDown={this.onThumbMouseDown}
                   onMouseUp={this.onThumbMouseUp}
                   {...props}
-                >
-                    <div className='ScrollButton' />
-                    <div className='ScrollButton' />
-                    <div className='ScrollButton' />
-                </div>
+                />
             )}
             renderTrackVertical={(props) => <div {...props} className='track' />}
           >

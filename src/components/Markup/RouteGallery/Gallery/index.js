@@ -4,13 +4,15 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import ImagesItem from './ImagesItem';
 import Scroller from '../../../Helpers/Scroller';
+import GalleriesDescription from '../../../../description/galleries';
 // import { connect } from 'react-redux';
 // import classnames from 'classnames';
 class Gallery extends Component {
   render() {
+    const { data } = this.props;
     return (
         <div className='Gallery'>
             <div className='ViewerContainer'>
@@ -23,33 +25,21 @@ class Gallery extends Component {
             <div className='ImagesGallery'>
                 <Scroller>
                     <div className={classnames('ImagesContainer', 'noselect')}>
-                        <ImagesItem sorce='https://i.imgur.com/5btqks9.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/RfZADlZ.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/U54Rosh.png' />
-                        <ImagesItem sorce='https://i.imgur.com/ws2K5Gd.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/OrbCM0u.png' />
-                        <ImagesItem sorce='https://i.imgur.com/OhzQB2q.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/SzH8TXj.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/mQkHifY.jpg?1' />
-                        <ImagesItem sorce='https://i.imgur.com/Dqh0tyX.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/5btqks9.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/RfZADlZ.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/U54Rosh.png' />
-                        <ImagesItem sorce='https://i.imgur.com/ws2K5Gd.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/OrbCM0u.png' />
-                        <ImagesItem sorce='https://i.imgur.com/OhzQB2q.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/SzH8TXj.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/mQkHifY.jpg?1' />
-                        <ImagesItem sorce='https://i.imgur.com/Dqh0tyX.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/5btqks9.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/RfZADlZ.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/U54Rosh.png' />
-                        <ImagesItem sorce='https://i.imgur.com/ws2K5Gd.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/OrbCM0u.png' />
-                        <ImagesItem sorce='https://i.imgur.com/OhzQB2q.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/SzH8TXj.jpg' />
-                        <ImagesItem sorce='https://i.imgur.com/mQkHifY.jpg?1' />
-                        <ImagesItem sorce='https://i.imgur.com/Dqh0tyX.jpg' />
+                        {
+                    _.map(GalleriesDescription, (item) => {
+                      if (item.name === data) {
+                        return _.map(item.urls, (i) => {
+                          console.log(i);
+                          return (
+                              <ImagesItem
+                                sorce={i}
+                              />
+                          );
+                        });
+                      }
+                      return null;
+                    })
+                }
                     </div>
                 </Scroller>
             </div>
@@ -60,9 +50,9 @@ class Gallery extends Component {
   }
 }
 
-// Gallery.propTypes = {
-//   match: PropTypes.object.isRequired,
-// };
+Gallery.propTypes = {
+  data: PropTypes.string.isRequired,
+};
 
 
 function select() {

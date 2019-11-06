@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 class ImagesItem extends Component {
   render() {
     const { sorce } = this.props;
+    console.log(sorce);
     return (
         <div className={classnames('ImagesItem', 'noselect')}>
             <img src={sorce} alt='background img' />
