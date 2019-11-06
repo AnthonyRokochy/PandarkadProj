@@ -20,7 +20,6 @@ const sagas = {
     const openedPage = document.location.pathname.slice(1);
     if (openedPage) {
       const page = _.find(GalleriesDescription, (item) => item.name === openedPage);
-      console.log(page);
       yield put(OPEN_PAGE(page));
     } else yield put(OPEN_MAIN(action.params));
   },

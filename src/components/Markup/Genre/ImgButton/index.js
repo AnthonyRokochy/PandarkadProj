@@ -13,9 +13,9 @@ const images = [
   },
   {
     url: 'https://i.imgur.com/3sN3gKp.jpg',
-    title: 'Concept Art',
+    title: '2D',
     width: '350px',
-    path: '/concept_art',
+    path: '/2D',
   },
   {
     url: 'https://i.imgur.com/szrLKL1.jpg',

@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable max-len */
 /* eslint-disable react/jsx-boolean-value */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -7,9 +9,9 @@ import { Route, Switch } from 'react-router-dom';
 import Background from '../Background';
 import Opening from './Opening';
 import Genre from './Genre';
-import Gallery from './Gallery';
+import RouteGallery from './RouteGallery';
 // import Language from '../Language';
-import ErrorPage from '../ErrorPage';
+import ErrorPage from './ErrorPage';
 // import Language from '../Language';
 
 class Markup extends Component {
@@ -23,7 +25,7 @@ class Markup extends Component {
                 <Switch>
                     <Route exact path='/' render={() => <Opening />} />
                     <Route exact path='/genre' render={() => <Genre />} />
-                    <Route exact path='/:name' render={() => <Gallery />} />
+                    <Route exact path='/:name' render={(props) => <RouteGallery {...props} />} />
                     <Route path='*' render={() => <ErrorPage />} />
                 </Switch>
             </div>

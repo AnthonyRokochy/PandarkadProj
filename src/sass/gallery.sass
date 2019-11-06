@@ -1,97 +1,97 @@
-.Gallery
+.RouteGallery
     height: 100%
     width: 100%
-    position: absolute
-    justify-content: center
-    align-items: center
-    display: flex
-    flex-wrap: wrap
-    flex-direction: row
-    .GalleryOpacity
+    .Gallery
         height: 100%
         width: 100%
         position: absolute
-        z-index: 0
-        background-color: black
-        opacity: .5
-    .ViewerContainer
+        justify-content: center
+        align-items: center
         display: flex
+        flex-wrap: wrap
         flex-direction: row
-        height: 60%
-        max-width: 54%
-        color: white
-        font-size: 70px
-        z-index: 100
-        .LeftButton
-            width: 5%
+        .GalleryOpacity
+            height: 100%
+            width: 100%
+            position: absolute
+            z-index: 0
+            background-color: black
+            opacity: .5
+        .ViewerContainer
             display: flex
-            justify-content: center
-            align-items: center
-            cursor: pointer
-            &:hover
-                color: blue
-        .Viewer
-            display: flex
-            position: relative
-            justify-content: center
-            align-items: center
-            width: 80%
-            margin: 10px
-            img
-                max-width: 100%;
-                max-height: 80vh;
-                box-shadow: 0 0 65px #0F1791
-                pointer-events: none;
-        .RightButton
-            display: flex
-            cursor: pointer
-            justify-content: center
-            align-items: center
-            width: 5%
-            &:hover
-                color: blue
-        .blink 
-            text-shadow: 0 -1px rgba(0,0,0,.1);
-            -webkit-animation: pulsate 1s linear infinite;
-            animation: pulsate 1.5s linear infinite;
-    .ImagesGallery
-        margin-right: 20px
-        height: 64%
-        width: 42%
-        z-index: 100
-        .ImagesContainer
-            display: flex
-            margin-right: 10px
             flex-direction: row
-            flex-wrap: wrap
-            align-items: center
-            justify-content: center
-            align-content: center
-            .ImagesItem
-                height: 120px
-                width: 170px
-                background-color: black
+            height: 60%
+            max-width: 54%
+            color: white
+            font-size: 70px
+            z-index: 100
+            .LeftButton
+                width: 5%
                 display: flex
                 justify-content: center
                 align-items: center
-                border: solid 1px blue
-                margin: 6px
-                overflow: hidden
+                cursor: pointer
                 &:hover
-                    cursor: pointer
-                    height: 125px
-                    width: 175px
-                    margin: 0
-                    box-shadow: 0 0 15px white
-                    border: none
-                &:hover img
-                    opacity: 1                       
+                    color: blue
+            .Viewer
+                display: flex
+                position: relative
+                justify-content: center
+                align-items: center
+                width: 80%
+                margin: 10px
                 img
-                    height: auto
                     max-width: 100%;
-                    object-fit: cover
-                    z-index: 2
-                    opacity: .6
+                    max-height: 80vh;
+                    box-shadow: 0 0 65px #0F1791
+                    pointer-events: none;
+            .RightButton
+                display: flex
+                cursor: pointer
+                justify-content: center
+                align-items: center
+                width: 5%
+                &:hover
+                    color: blue
+            
+        .ImagesGallery
+            margin-right: 20px
+            height: 64%
+            width: 42%
+            z-index: 100
+            .ImagesContainer
+                display: flex
+                margin-right: 10px
+                flex-direction: row
+                flex-wrap: wrap
+                align-items: center
+                justify-content: center
+                align-content: center
+                .ImagesItem
+                    height: 120px
+                    width: 170px
+                    background-color: black
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    border: solid 1px blue
+                    margin: 6px
+                    overflow: hidden
+                    &:hover
+                        cursor: pointer
+                        height: 125px
+                        width: 175px
+                        margin: 0
+                        box-shadow: 0 0 15px white
+                        border: none
+                    &:hover img
+                        opacity: 1                       
+                    img
+                        height: auto
+                        max-width: 100%;
+                        object-fit: cover
+                        z-index: 2
+                        opacity: .6
 
 
 

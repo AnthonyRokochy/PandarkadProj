@@ -15,8 +15,6 @@ class App extends Component {
   componentDidMount() {
     dict.translate(this.props.lang);
     const isMobile = window.screen.width < 600;
-    if (isMobile) console.log('[VERSION] MOBILE');
-    else console.log('[VERSION] DESKTOP');
     window.onload = () => {
       this.props.dispatch(OPEN({ isMobile }));
       this.props.dispatch(CLOSE_LOADER());

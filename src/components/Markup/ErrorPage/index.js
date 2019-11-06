@@ -5,7 +5,15 @@ import { connect } from 'react-redux';
 class ErrorPage extends Component {
   render() {
     return (
-        <div className='ErrorPage'>Ooops, something went wrong...</div>
+        <div className='ErrorPage'>
+            <div className='Error404'>
+                <img src='https://i.imgur.com/xtC3wnS.gif' alt='' />
+                <div className='TextError'>
+                    <div className='BigErrorText'>Error 404</div>
+                    <div className='SmallErrorText'>Page not found</div>
+                </div>
+            </div>
+        </div>
     );
   }
 }
