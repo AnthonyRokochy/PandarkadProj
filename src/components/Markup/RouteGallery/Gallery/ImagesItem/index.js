@@ -5,16 +5,17 @@ import PropTypes from 'prop-types';
 // import classnames from 'classnames';
 class ImagesItem extends Component {
   render() {
-    const { source } = this.props;
+    const { sorce } = this.props;
+    console.log(sorce);
     return (
         <div className={classnames('ImagesItem', 'noselect')}>
-            <img src={source} alt='background img' />
+            <img src={sorce} alt='background img' />
         </div>
     );
   }
 }
 ImagesItem.propTypes = {
-  source: PropTypes.isRequired,
+  sorce: PropTypes.string.isRequired,
 };
 
 export default ImagesItem;

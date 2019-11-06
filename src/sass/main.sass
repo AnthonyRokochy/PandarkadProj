@@ -2,10 +2,14 @@
 @import "opening"
 @import "animations"
 @import "genre"
-@import 'gallery'
+@import "gallery"
+@import "language"
+@import "scroller"
+@import "errorpage"
+@import "loader"
 
 #root
-    height: 100%
+    height: 100vh
 body
     padding: 0
     margin: 0
@@ -16,15 +20,18 @@ body
     p
         margin: 0
         padding: 0
-        line-height: 100%
     .App
-        height: 100vh
+        height: 100%
         width: 100%
+        .Markup
+            display: flex
+            height: 100%
+            width: 100%
+            justify-content: center
+            align-items: center
         .Linker
             color: white
-        .Divider
-            border-right: solid 2px white
-            opacity: .5
+            cursor: pointer
         .noselect 
             -webkit-touch-callout: none
             -webkit-user-select: none

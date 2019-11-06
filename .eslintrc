@@ -9,6 +9,7 @@
         "react/jsx-indent": [2, 4],
         "jsx-quotes": [2, "prefer-single"],
         "no-console": 0,
+        "linebreak-style": 0,
         "import/prefer-default-export": 0,
         "arrow-body-style": 0
     },
@@ -19,7 +20,8 @@
     "globals": {
         "React": true,
         "ReactDOM": true,
-        "_": true
+        "_": true,
+        "dict": true
     },
     "parser": "babel-eslint"
 }

@@ -1,39 +1,51 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Background from './Background';
-import Opening from './Opening';
-import Genre from './Genre';
-import Gallery from './Gallery';
-// import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import classnames from 'classnames';
+/* eslint-disable react/destructuring-assignment */
+import { Component } from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import Markup from './Markup';
+import Loader from './Helpers/Loader';
+import {
+  CLOSE_LOADER, OPEN,
+  //
+} from '../redux/actions/actions';
+import { AppContext } from '../contexts/contexts';
+
 class App extends Component {
+  componentDidMount() {
+    dict.translate(this.props.lang);
+    const isMobile = window.screen.width < 600;
+    window.onload = () => {
+      this.props.dispatch(OPEN({ isMobile }));
+      this.props.dispatch(CLOSE_LOADER());
+    };
+  }
+
   render() {
+    const { lang } = this.props;
     return (
-        <BrowserRouter>
-            <div className='App'>
-                <Background />
-                <Route exact path='/' component={Opening} />
-                <Route path='/genre' component={Genre} />
-                <Route path='/gallery' component={Gallery} />
-            </div>
-        </BrowserRouter>
+        <div className='App'>
+            <AppContext.Provider value={{ lang }}>
+                <Loader />
+                <Markup />
+            </AppContext.Provider>
+        </div>
     );
   }
 }
+App.propTypes = {
+  lang: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  // loading: PropTypes.bool.isRequired,
+  // dict: PropTypes.object.isRequired,
+};
 
-// App.propTypes = {
-//
-// };
+function select(store) {
+  return {
+    loading: store.viewReducer.loading,
+    lang: store.viewReducer.userParams.lang,
+    // dict: store.viewReducer.dict,
+  };
+}
 
-// App.defaultProps = {
-//
-// };
-
-// function select(/* store */) {
-//     return { };
-// }
-
-export default App;
+export default withRouter(connect(select)(App));
