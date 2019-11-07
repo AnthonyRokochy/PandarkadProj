@@ -20,14 +20,14 @@ class Markup extends Component {
     return (
         <Fade in={!loading} timeout={{ exit: 800, enter: 400 }}>
             <div className='Markup'>
-                <Background />
+                {/* <Background />
                 <Language />
                 <Switch>
                     <Route exact path='/' render={() => <Opening />} />
                     <Route exact path='/genre' render={() => <Genre />} />
                     <Route exact path='/:name' render={(props) => <RouteGallery {...props} />} />
                     <Route path='*' render={() => <ErrorPage />} />
-                </Switch>
+                </Switch> */}
             </div>
         </Fade>
     );
