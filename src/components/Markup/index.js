@@ -12,7 +12,7 @@ import { Fade } from '@material-ui/core';
 // import RouteGallery from './RouteGallery';
 // import Language from '../Language';
 // import ErrorPage from './ErrorPage';
-// import Background from '../Background';
+import Background from '../Background';
 
 class Markup extends Component {
   render() {
@@ -20,8 +20,8 @@ class Markup extends Component {
     return (
         <Fade in={!loading} timeout={{ exit: 800, enter: 400 }}>
             <div className='Markup'>
-                {/* <Background />
-                <Language />
+                <Background />
+                {/* <Language />
                 <Switch>
                     <Route exact path='/' render={() => <Opening />} />
                     <Route exact path='/genre' render={() => <Genre />} />
