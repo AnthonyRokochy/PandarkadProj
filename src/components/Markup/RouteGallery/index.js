@@ -12,7 +12,7 @@ import ErrorPage from '../ErrorPage';
 class RouteGallery extends Component {
   componentDidMount() {
     const { name } = this.props.match.params;
-    console.log(`Путь страницы - ${name}`);
+    console.log(`Путь страни - ${name}`);
   }
 
   render() {

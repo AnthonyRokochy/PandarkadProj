@@ -9,7 +9,7 @@ class ErrorPage extends Component {
             <div className='Error404'>
                 <img src='https://i.imgur.com/xtC3wnS.gif' alt='' />
                 <div className='TextError'>
-                    <div className='BigErrorText'>Error 404</div>
+                    <div className='BigErrorText'> 404</div>
                     <div className='SmallErrorText'>Page not found</div>
                 </div>
             </div>
