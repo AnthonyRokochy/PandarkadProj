@@ -18,7 +18,7 @@ function Opening() {
               <div className='BlurSpaceOpacity' />
           </div>
           <div className='IntroductionText'>
-              <div className='FrontText'>PANDARCAD</div>
+              <div className='FrontText'>PANDARKAD</div>
               <div className='SubText'>
                   { dict.translate('Opening.HelloText', lang) }
               </div>
