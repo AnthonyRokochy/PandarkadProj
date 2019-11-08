@@ -110,8 +110,11 @@
                     overflow: hidden
                     &:hover
                         @media #{$media-phones}
-                            width: 86%
-                            height: 41%
+                            width: 85%
+                            box-shadow: none
+                            border: solid 1px blue
+                            height: 40%
+                            margin: 6px
                         cursor: pointer
                         height: 125px
                         width: 175px
@@ -121,6 +124,8 @@
                     &:hover img
                         opacity: 1                       
                     img
+                        @media #{$media-phones}
+                            opacity: 1
                         height: auto
                         max-width: 100%;
                         object-fit: cover

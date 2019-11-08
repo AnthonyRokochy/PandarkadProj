@@ -10,7 +10,7 @@ class ErrorPage extends Component {
                 <img src='https://i.imgur.com/xtC3wnS.gif' alt='' />
                 <div className='TextError'>
                     <div className='BigErrorText'> 404</div>
-                    <div className='SmallErrorText'>Page not found</div>
+                    <div className='SmallErrorText'>Something went wrong...</div>
                 </div>
             </div>
         </div>
