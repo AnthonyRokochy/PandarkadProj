@@ -35,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
     minWidth: 300,
   },
   image: {

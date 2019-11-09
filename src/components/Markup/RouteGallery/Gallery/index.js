@@ -18,7 +18,7 @@ class Gallery extends Component {
             <div className='ViewerContainer'>
                 <div className={classnames('LeftButton', 'noselect', 'blink')}>{'<'}</div>
                 <div className='Viewer'>
-                    <img src='https://i.imgur.com/lV86HKa.jpg' alt='background img' />
+                    <img src='https://i.imgur.com/XaK2Odj.jpg' alt='background img' />
                 </div>
                 <div className={classnames('RightButton', 'noselect', 'blink')}>{'>'}</div>
             </div>
