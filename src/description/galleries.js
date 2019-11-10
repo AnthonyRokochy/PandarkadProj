@@ -23,11 +23,11 @@ const GalleriesDescription = [
   {
     name: THREED,
     urls: [
-      'https://i.imgur.com/JMwiEqT.jpg',
-      'https://i.imgur.com/JMwiEqT.jpg',
-      'https://i.imgur.com/JMwiEqT.jpg',
-      'https://i.imgur.com/JMwiEqT.jpg',
-      'https://i.imgur.com/JMwiEqT.jpg',
+      'https://i.imgur.com/RfZADlZ.jpg',
+      'https://i.imgur.com/3sN3gKp.jpg',
+      'https://i.imgur.com/tSy4FEs.jpg',
+      'https://i.imgur.com/szrLKL1.jpg',
+      'https://i.imgur.com/P294MGn.jpg',
       'https://i.imgur.com/JMwiEqT.jpg',
       'https://i.imgur.com/JMwiEqT.jpg',
       'https://i.imgur.com/JMwiEqT.jpg',

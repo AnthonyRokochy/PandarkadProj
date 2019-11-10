@@ -1,5 +1,6 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable prefer-destructuring */
+/* eslint-disable no-plusplus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import classnames from 'classnames';
@@ -11,28 +12,74 @@ import GalleriesDescription from '../../../../description/galleries';
 // import { connect } from 'react-redux';
 // import classnames from 'classnames';
 class Gallery extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { itemKey: 0 };
+    this.ImageClick = this.ImageClick.bind(this);
+    this.LeftClick = this.LeftClick.bind(this);
+    this.RightClick = this.RightClick.bind(this);
+  }
+
+  ImageClick(key) {
+    this.setState({
+      itemKey: key,
+    });
+  }
+
+  LeftClick() {
+    let previousKey = this.state.itemKey;
+    this.setState({
+      itemKey: --previousKey,
+    });
+  }
+
+  RightClick() {
+    let previousKey = this.state.itemKey;
+    this.setState({
+      itemKey: ++previousKey,
+    });
+  }
+
   render() {
+    console.log(this.state.itemKey);
     const { data } = this.props;
     return (
         <div className='Gallery'>
             <div className='ViewerContainer'>
-                <div className={classnames('LeftButton', 'noselect', 'blink')}>{'<'}</div>
+                <div onClick={this.LeftClick} className={classnames('LeftButton', 'noselect', 'blink')}>{'<'}</div>
                 <div className='Viewer'>
-                    <img src='https://i.imgur.com/XaK2Odj.jpg' alt='background img' />
+                    {
+                    _.map(GalleriesDescription, (item) => {
+                      if (item.name === data) {
+                        return _.map(item.urls, (i, k) => {
+                          console.log(this.state.itemKey);
+                          if (k === this.state.itemKey) {
+                            return (
+                                <img src={i} alt='background img' />
+                            );
+                          }
+                          return null;
+                        });
+                      }
+                      return null;
+                    })
+                }
+
                 </div>
-                <div className={classnames('RightButton', 'noselect', 'blink')}>{'>'}</div>
+                <div onClick={this.RightClick} className={classnames('RightButton', 'noselect', 'blink')}>{'>'}</div>
             </div>
             <div className='ImagesGallery'>
                 <Scroller>
-                    <div className={classnames('ImagesContainer', 'noselect')}>
+                    <div className='ImagesContainer'>
                         {
                     _.map(GalleriesDescription, (item) => {
                       if (item.name === data) {
-                        return _.map(item.urls, (i) => {
-                          console.log(i);
+                        return _.map(item.urls, (i, k) => {
                           return (
                               <ImagesItem
-                                sorce={i}
+                                urls={i}
+                                id={k}
+                                onClick={() => this.ImageClick(k)}
                               />
                           );
                         });
@@ -43,8 +90,6 @@ class Gallery extends Component {
                     </div>
                 </Scroller>
             </div>
-
-            {/* <div className='GalleryOpacity' /> */}
         </div>
     );
   }
