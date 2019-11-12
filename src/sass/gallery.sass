@@ -5,25 +5,17 @@
         height: 100%
         width: 100%
         position: absolute
-        justify-content: center
         align-items: center
         display: flex
         flex-wrap: wrap
         flex-direction: row
-        .GalleryOpacity
-            height: 100%
-            width: 100%
-            position: absolute
-            z-index: 0
-            background-color: black
-            opacity: .5
         .ViewerContainer
             @media #{$media-small}
                 display: flex
                 justify-content: center
                 align-items: center
-                max-width: 60%
-                max-height: 100%
+                width: 53%
+                height: 100%
             @media #{$media-phones}
                 display: flex
                 justify-content: center
@@ -77,7 +69,7 @@
                     color: blue
         .ImagesGallery
             @media #{$media-small}
-                width: 35%
+                width: 33%
                 height: 60%
             @media #{$media-phones}
                 height: 80%
@@ -110,6 +102,7 @@
                     margin: 6px
                     z-index: 600
                     overflow: hidden
+                    
                     &:hover
                         @media #{$media-phones}
                             width: 85%
@@ -124,7 +117,7 @@
                         box-shadow: 0 0 15px white
                         border: none
                     &:hover img
-                        opacity: 1                       
+                        opacity: 1    
                     img
                         @media #{$media-phones}
                             opacity: 1
@@ -133,6 +126,13 @@
                         object-fit: cover
                         z-index: 2
                         opacity: .6
+                .isSelect
+                    border: solid 2px white
+                    img 
+                        opacity: 1
+
+                    
+                    
 
 
 

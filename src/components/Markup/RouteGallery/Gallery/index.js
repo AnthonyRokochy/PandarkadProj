@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-boolean-value */
 /* eslint-disable no-plusplus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -20,6 +21,15 @@ class Gallery extends Component {
     this.RightClick = this.RightClick.bind(this);
   }
 
+  componentWillMount() {
+    _.map(GalleriesDescription, (item) => {
+      if (item.name === this.props.data) {
+        this.arrUrls = item.urls.slice();
+      }
+      return null;
+    });
+  }
+
   ImageClick(key) {
     this.setState({
       itemKey: key,
@@ -28,43 +38,43 @@ class Gallery extends Component {
 
   LeftClick() {
     let previousKey = this.state.itemKey;
-    this.setState({
-      itemKey: --previousKey,
-    });
+    if (previousKey === 0) {
+      this.setState({
+        itemKey: previousKey,
+      });
+    } else {
+      this.setState({
+        itemKey: --previousKey,
+      });
+    }
   }
 
   RightClick() {
     let previousKey = this.state.itemKey;
-    this.setState({
-      itemKey: ++previousKey,
-    });
+    console.log(this.arrUrls.length);
+    if (this.state.itemKey < (this.arrUrls.length - 1)) {
+      this.setState({
+        itemKey: ++previousKey,
+      });
+    }
   }
 
   render() {
-    console.log(this.state.itemKey);
-    const { data } = this.props;
     return (
         <div className='Gallery'>
             <div className='ViewerContainer'>
                 <div onClick={this.LeftClick} className={classnames('LeftButton', 'noselect', 'blink')}>{'<'}</div>
                 <div className='Viewer'>
                     {
-                    _.map(GalleriesDescription, (item) => {
-                      if (item.name === data) {
-                        return _.map(item.urls, (i, k) => {
-                          console.log(this.state.itemKey);
-                          if (k === this.state.itemKey) {
-                            return (
-                                <img src={i} alt='background img' />
-                            );
-                          }
-                          return null;
-                        });
+                      _.map(this.arrUrls, (item, key) => {
+                        if (key === this.state.itemKey) {
+                          return (
+                              <img src={item} alt='background img' />
+                          );
+                        }
+                        return null;
+                      })
                       }
-                      return null;
-                    })
-                }
-
                 </div>
                 <div onClick={this.RightClick} className={classnames('RightButton', 'noselect', 'blink')}>{'>'}</div>
             </div>
@@ -72,21 +82,27 @@ class Gallery extends Component {
                 <Scroller>
                     <div className='ImagesContainer'>
                         {
-                    _.map(GalleriesDescription, (item) => {
-                      if (item.name === data) {
-                        return _.map(item.urls, (i, k) => {
-                          return (
-                              <ImagesItem
-                                urls={i}
-                                id={k}
-                                onClick={() => this.ImageClick(k)}
-                              />
-                          );
-                        });
+                    _.map(this.arrUrls, (item, key) => {
+                      if (key === this.state.itemKey) {
+                        return (
+                            <ImagesItem
+                              urls={item}
+                              id={key}
+                              isSelected={true}
+                              onClick={() => this.ImageClick(key)}
+                            />
+                        );
                       }
-                      return null;
+                      return (
+                          <ImagesItem
+                            urls={item}
+                            id={key}
+                            isSelected={false}
+                            onClick={() => this.ImageClick(key)}
+                          />
+                      );
                     })
-                }
+                      }
                     </div>
                 </Scroller>
             </div>
