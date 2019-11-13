@@ -52,6 +52,7 @@ class Scroller extends Component {
             ref={(el) => this.Scroller = el}
             className='Scroller'
             onScroll={this.handleScroll}
+            renderView={(props) => <div {...props} className='view'>{ props.children }</div>}
             renderThumbVertical={(props) => (
                 <div
                   role='presentation'

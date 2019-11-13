@@ -83,21 +83,11 @@ class Gallery extends Component {
                     <div className='ImagesContainer'>
                         {
                     _.map(this.arrUrls, (item, key) => {
-                      if (key === this.state.itemKey) {
-                        return (
-                            <ImagesItem
-                              urls={item}
-                              id={key}
-                              isSelected={true}
-                              onClick={() => this.ImageClick(key)}
-                            />
-                        );
-                      }
                       return (
                           <ImagesItem
                             urls={item}
                             id={key}
-                            isSelected={false}
+                            isSelected={key === this.state.itemKey} // bingo
                             onClick={() => this.ImageClick(key)}
                           />
                       );
