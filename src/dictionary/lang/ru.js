@@ -8,4 +8,10 @@ export default {
     HelloText: 'Лондон является столицей Великой Британии',
     Enter: 'Войти',
   },
+  Genre: {
+    twod: '2D',
+    threed: '3D',
+    Scetch: 'Скетчи',
+    Another: 'Другие',
+  },
 };

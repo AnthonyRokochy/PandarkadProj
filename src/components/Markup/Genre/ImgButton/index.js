@@ -1,35 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-
-const images = [
-  {
-    url: 'https://i.imgur.com/RfZADlZ.jpg',
-    title: '3D',
-    width: '350px',
-    path: '/3D',
-  },
-  {
-    url: 'https://i.imgur.com/3sN3gKp.jpg',
-    title: '2D',
-    width: '350px',
-    path: '/2D',
-  },
-  {
-    url: 'https://i.imgur.com/szrLKL1.jpg',
-    title: 'Scetch',
-    width: '350px',
-    path: '/scetch',
-  },
-  {
-    url: 'https://i.imgur.com/s1Rl8TZ.jpg',
-    title: 'Process',
-    width: '350px',
-    path: '/process',
-  },
-];
+import { AppContext } from '../../../../contexts/contexts';
+import GalleriesDescription from '../../../../description/galleries';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -106,44 +82,55 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonBases() {
+function ButtonBases() {
   const classes = useStyles();
-
+  const { lang } = useContext(AppContext);
   return (
       <div className={classes.root}>
-          {images.map((image) => (
+          {
+            _.map(GalleriesDescription, (item) => (
               // eslint-disable-next-line react/jsx-key
-              <Link className='Linker' to={image.path}>
-                  <ButtonBase
-                    focusRipple
-                    key={image.title}
-                    className={classes.image}
-                    focusVisibleClassName={classes.focusVisible}
-                    style={{
-                      width: image.width,
-                    }}
-                  >
-                      <span
-                        className={classes.imageSrc}
-                        style={{
-                          backgroundImage: `url(${image.url})`,
-                        }}
-                      />
-                      <span className={classes.imageBackdrop} />
-                      <span className={classes.imageButton}>
-                          <Typography
-                            component='span'
-                            variant='subtitle1'
-                            color='inherit'
-                            className={classes.imageTitle}
-                          >
-                              {image.title}
-                              <span className={classes.imageMarked} />
-                          </Typography>
-                      </span>
-                  </ButtonBase>
-              </Link>
-          ))}
+                <Link className='Linker' to={item.path}>
+                    <ButtonBase
+                      focusRipple
+                      key={item.title}
+                      className={classes.image}
+                      focusVisibleClassName={classes.focusVisible}
+                      style={{
+                        width: '350px',
+                      }}
+                    >
+                        <span
+                          className={classes.imageSrc}
+                          style={{
+                            backgroundImage: `url(${item.prevImg})`,
+                          }}
+                        />
+                        <span className={classes.imageBackdrop} />
+                        <span className={classes.imageButton}>
+                            <Typography
+                              component='span'
+                              variant='subtitle1'
+                              color='inherit'
+                              className={classes.imageTitle}
+                            >
+                                { dict.translate(`Genre.${item.title}`, lang) }
+                                <span className={classes.imageMarked} />
+                            </Typography>
+                        </span>
+                    </ButtonBase>
+                </Link>
+            ))
+}
       </div>
   );
 }
+
+function select(store) {
+  return {
+    // lang: store.viewReducer.lang,
+    dict: store.viewReducer.dict,
+  };
+}
+
+export default connect(select)(ButtonBases);

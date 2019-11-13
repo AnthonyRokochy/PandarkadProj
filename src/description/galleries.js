@@ -1,5 +1,5 @@
 import {
-  THREED, TWOD, SCETCH, PROCESS,
+  THREED, TWOD, SCETCH, ANOTHER,
 } from '../consts/galleriesNames';
 
 const GalleriesDescription = [
@@ -29,7 +29,9 @@ const GalleriesDescription = [
       'https://i.imgur.com/01ewsF4.jpg',
       'https://i.imgur.com/Oa7Y7SX.jpg',
     ],
-    caption: 'legal.twod',
+    prevImg: 'https://i.imgur.com/jkT9kYq.jpg',
+    path: '/2D',
+    title: 'twod',
   },
   {
     name: THREED,
@@ -46,7 +48,9 @@ const GalleriesDescription = [
       'https://i.imgur.com/JMwiEqT.jpg',
       'https://i.imgur.com/JMwiEqT.jpg',
     ],
-    caption: 'legal.threed',
+    prevImg: 'https://i.imgur.com/frVQBFY.jpg',
+    path: '/3D',
+    title: 'threed',
   },
   {
     name: SCETCH,
@@ -63,10 +67,12 @@ const GalleriesDescription = [
       'https://i.imgur.com/hOqnnP8.jpg',
       'https://i.imgur.com/hOqnnP8.jpg',
     ],
-    caption: 'legal.scetch',
+    prevImg: 'https://i.imgur.com/Ke6AIFW.jpg',
+    path: '/scetch',
+    title: 'Scetch',
   },
   {
-    name: PROCESS,
+    name: ANOTHER,
     urls: [
       'https://i.imgur.com/YnEGok4.jpg',
       'https://i.imgur.com/YnEGok4.jpg',
@@ -80,7 +86,9 @@ const GalleriesDescription = [
       'https://i.imgur.com/YnEGok4.jpg',
       'https://i.imgur.com/YnEGok4.jpg',
     ],
-    caption: 'legal.process',
+    prevImg: 'https://i.imgur.com/gp19Qsb.jpg',
+    path: '/another',
+    title: 'Another',
   },
 ];
 
