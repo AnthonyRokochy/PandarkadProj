@@ -15,20 +15,18 @@ import GalleriesDescription from '../../../../description/galleries';
 class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { itemKey: 0 };
-    this.ImageClick = this.ImageClick.bind(this);
-    this.LeftClick = this.LeftClick.bind(this);
-    this.RightClick = this.RightClick.bind(this);
-  }
-
-  componentWillMount() {
     _.map(GalleriesDescription, (item) => {
       if (item.name === this.props.data) {
         this.arrUrls = item.urls.slice();
       }
       return null;
     });
+    this.state = { itemKey: 0 };
+    this.ImageClick = this.ImageClick.bind(this);
+    this.LeftClick = this.LeftClick.bind(this);
+    this.RightClick = this.RightClick.bind(this);
   }
+
 
   ImageClick(key) {
     this.setState({
@@ -42,20 +40,22 @@ class Gallery extends Component {
       this.setState({
         itemKey: previousKey,
       });
+      document.getElementById(this.state.itemKey).scrollIntoView();
     } else {
       this.setState({
         itemKey: --previousKey,
       });
+      document.getElementById(this.state.itemKey - 1).scrollIntoView();
     }
   }
 
   RightClick() {
     let previousKey = this.state.itemKey;
-    console.log(this.arrUrls.length);
     if (this.state.itemKey < (this.arrUrls.length - 1)) {
       this.setState({
         itemKey: ++previousKey,
       });
+      document.getElementById(this.state.itemKey + 1).scrollIntoView();
     }
   }
 
