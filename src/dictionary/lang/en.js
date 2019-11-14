@@ -6,7 +6,7 @@ export default {
     loading: 'Загрузка...',
   },
   Opening: {
-    HelloText: 'London is the capital of the Great Britain',
+    HelloText: 'Simplicity is the highest form of complexity',
     Enter: 'Enter',
   },
   Genre: {

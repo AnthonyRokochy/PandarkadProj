@@ -1,17 +1,15 @@
-/* eslint-disable react/jsx-boolean-value */
-/* eslint-disable no-plusplus */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-plusplus */
 /* eslint-disable react/destructuring-assignment */
+
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ImagesItem from './ImagesItem';
 import Scroller from '../../../Helpers/Scroller';
 import GalleriesDescription from '../../../../description/galleries';
-// import { connect } from 'react-redux';
-// import classnames from 'classnames';
+
 class Gallery extends Component {
   constructor(props) {
     super(props);
@@ -86,7 +84,7 @@ class Gallery extends Component {
                           <ImagesItem
                             urls={item}
                             id={key}
-                            isSelected={key === this.state.itemKey} // bingo
+                            isSelected={key === this.state.itemKey}
                             onClick={() => this.ImageClick(key)}
                           />
                       );
@@ -105,9 +103,4 @@ Gallery.propTypes = {
 };
 
 
-function select() {
-  return {
-  };
-}
-
-export default connect(select)(Gallery);
+export default Gallery;

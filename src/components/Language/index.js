@@ -3,16 +3,11 @@ import {
 } from '@material-ui/core';
 import { useState, useContext } from 'react';
 import { useDispatch } from 'react-redux';
-
-// import { LANG_UA, LANG_RU, LANG_EN } from '../../../../consts/generalConsts';
 import { AppContext } from '../../contexts/contexts';
 import { CHANGE_LANG } from '../../redux/actions/actions';
 import languages from '../../dictionary/lang';
 
-// import classnames from 'classnames';
-
 const Language = () => {
-  // const [anchorEl, setAnchor] = useState(null);
   const [opened, setOpened] = useState(null);
   const { lang } = useContext(AppContext);
   const dispatch = useDispatch();
@@ -41,7 +36,6 @@ const Language = () => {
                             _.map(languages, (_, key) => (
                                 <MenuItem
                                   className='MenuLanguage'
-                                    // classes={ { label: 'lang_label' } }
                                   onClick={() => setLang(key)}
                                   key={key}
                                   dense

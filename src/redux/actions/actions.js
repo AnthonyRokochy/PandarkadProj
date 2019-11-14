@@ -33,20 +33,11 @@ export const SET_LANG = (lang) => {
     lang,
   };
 };
-export const SHOW_SNACKBAR = (msg) => {
-  return {
-    type: ActionTypes.SHOW_SNACKBAR,
-    msg,
-  };
+export const SET_GALLERY_SCROLLED = () => {
+  return { type: ActionTypes.SET_GALLERY_SCROLLED };
 };
-export const CLOSE_SNACKBAR = () => {
-  return { type: ActionTypes.CLOSE_SNACKBAR };
-};
-export const SET_MENU_SCROLLED = () => {
-  return { type: ActionTypes.SET_MENU_SCROLLED };
-};
-export const RESET_MENU = () => {
-  return { type: ActionTypes.RESET_MENU };
+export const RESET_GALLERY = () => {
+  return { type: ActionTypes.RESET_GALLERY };
 };
 export const OPEN_PAGE = (page) => {
   return {

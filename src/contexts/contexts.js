@@ -1,3 +1,1 @@
-import { LANG_UA } from '../consts/generalConsts';
-
-export const AppContext = React.createContext({ lang: LANG_UA });
+export const AppContext = React.createContext(null);

@@ -37,10 +37,6 @@ Markup.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
 
-// Markup.defaultProps = {
-//
-// };
-
 function select(store) {
   return {
     loading: store.viewReducer.loading,

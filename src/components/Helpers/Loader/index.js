@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Fade } from '@material-ui/core';
 import { connect } from 'react-redux';
-// import classnames from 'classnames';
+
 class Loader extends Component {
   render() {
     const { loading } = this.props;
@@ -21,10 +21,6 @@ Loader.propTypes = {
   loading: PropTypes.bool.isRequired,
   //
 };
-
-// Loader.defaultProps = {
-//
-// };
 
 function select(store) {
   return {

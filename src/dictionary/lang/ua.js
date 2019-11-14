@@ -5,7 +5,7 @@ export default {
     ua: 'Українська',
   },
   Opening: {
-    HelloText: 'Лондон є столицею Великої Британії',
+    HelloText: 'Простота - вища форма складності',
     Enter: 'Увійти',
   },
   Genre: {
