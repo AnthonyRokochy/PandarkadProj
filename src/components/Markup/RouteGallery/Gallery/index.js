@@ -27,7 +27,6 @@ class Gallery extends Component {
     this.RightClick = this.RightClick.bind(this);
   }
 
-
   ImageClick(key) {
     this.setState({
       itemKey: key,
