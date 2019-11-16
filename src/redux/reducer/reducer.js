@@ -8,8 +8,6 @@ import {
 } from '../../consts/generalConsts';
 
 const initialState = Immutable({
-  SnackbarMessage: {},
-  SnackbarVisible: false,
   MenuSelectedIndex: 0,
   GalleryScrolled: false,
   userParams: {
