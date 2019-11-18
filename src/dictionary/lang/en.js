@@ -15,4 +15,7 @@ export default {
     Scetch: 'Scetch',
     Another: 'Another',
   },
+  ErrorPage: {
+    SmallErrorText: 'Something went wrong...',
+  },
 };

@@ -14,4 +14,7 @@ export default {
     Scetch: 'Скетчи',
     Another: 'Другие',
   },
+  ErrorPage: {
+    SmallErrorText: 'Что-то пошло не так...',
+  },
 };
